@@ -1,6 +1,5 @@
 ---
 title: "Constructing a reproducible blog post using zzcollab tools"
-subtitle: "A template for reproducible analysis"
 author: "Ronald 'Ryy' G. Thomas"
 date: "2025-01-01"
 categories: [r, zzcollab, reproducibility]
