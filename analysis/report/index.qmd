@@ -228,7 +228,9 @@ The reader uses this as a mental roadmap of what they'll learn.
 3. [Specific, measurable objective 3]
 4. [Stretch goal or advanced concept]
 
-**Disclaimer:** I'm documenting my learning process here. If you spot errors or have better approaches, please let me know.
+**Disclaimer:** This learning process is documented
+here. Errors spotted or better approaches are always
+welcome.
 
 <!-- ============================================================================
 AMBIANCE IMAGE 1 (OPTIONAL BUT RECOMMENDED)
@@ -273,7 +275,7 @@ EXAMPLE:
 - Display basic structure to confirm loaded correctly
 -->
 
-Here's what you'll need to follow along:
+The following are needed to follow along:
 
 ```{r}
 #| eval: false
@@ -301,7 +303,9 @@ colors <- get_analysis_colors()
 mtcars_clean <- read_csv("data/derived_data/mtcars_clean.csv", show_col_types = FALSE)
 ```
 
-**Background:** Basic R and ggplot2 familiarity helpful but not required. I'll explain concepts as we go!
+**Background:** Basic R and ggplot2 familiarity is
+helpful but not required. Concepts are explained
+as we proceed.
 
 # What is [Topic/Concept]?
 
@@ -326,7 +330,11 @@ heights: you'd draw a line through data points, then use that line to make
 predictions for new people. That's what linear regression does."
 -->
 
-Before diving into code, let's clarify what [topic] actually means. [Simple, plain-language explanation of the concept. Use an analogy if helpful.] In practice, this means [concrete example or application].
+Before examining the code, it is worth clarifying
+what [topic] actually means. [Simple, plain-language
+explanation of the concept. Use an analogy if
+helpful.] In practice, this means [concrete example
+or application].
 
 # Getting Started: Initial Exploration
 
@@ -352,7 +360,8 @@ INCLUDE SUMMARY TABLE: Show key statistics from prepared data
 glimpse(mtcars_clean)
 ```
 
-Okay, so we have 32 cars with 11 variables. Let's examine the data characteristics.
+We have 32 cars with 11 variables. We now examine
+the data characteristics.
 
 ```{r}
 #| label: summary-stats
@@ -372,7 +381,8 @@ kable(summary_table,
       caption = "Summary Statistics: Motor Trend Car Data")
 ```
 
-Not too shabby! Average fuel efficiency is 20.1 MPG with quite a bit of variation (SD = 6.0).
+Average fuel efficiency is 20.1 MPG with
+considerable variation (SD = 6.0).
 
 # Exploring the Data
 
@@ -395,7 +405,8 @@ DON'T: re-create these figures inline (they're already generated!)
 DO: reference the pre-generated files and focus on interpretation
 -->
 
-Let's visualize these patterns. I pre-generated these figures using analysis/scripts/03_generate_figures.R:
+We visualise these patterns using pre-generated
+figures from `analysis/scripts/03_generate_figures.R`:
 
 ```{r}
 #| label: eda-overview
@@ -404,7 +415,8 @@ Let's visualize these patterns. I pre-generated these figures using analysis/scr
 knitr::include_graphics("figures/eda-overview.png")
 ```
 
-Wow, that's a clear pattern! Cars with fewer cylinders are way more fuel-efficient.
+Cars with fewer cylinders are consistently more
+fuel-efficient.
 
 <!-- TEMPLATE INSTRUCTION: AMBIANCE IMAGE 2 (OPTIONAL)
 
@@ -437,7 +449,8 @@ kable(correlations %>% head(5),
       caption = "Top 5 Correlations with MPG (fuel efficiency)")
 ```
 
-Weight has the strongest correlation with MPG (r = -0.87). Let's visualize that relationship:
+Weight has the strongest correlation with MPG
+(r = -0.87). We visualise that relationship:
 
 ```{r}
 #| label: correlation-plot
@@ -446,7 +459,8 @@ Weight has the strongest correlation with MPG (r = -0.87). Let's visualize that 
 knitr::include_graphics("figures/correlation-plot.png")
 ```
 
-Interesting! Heavier cars consistently get worse mileage. Makes sense when you think about it.
+Heavier cars consistently get worse mileage, a
+relationship consistent with basic mechanics.
 
 # Building a Model
 
@@ -474,7 +488,8 @@ AVOID:
 - Unexplained statistics (briefly interpret each result)
 ============================================================================ -->
 
-Let me fit a simple linear model to quantify this relationship:
+We fit a simple linear model to quantify this
+relationship:
 
 ```{r}
 #| label: load-model-results
@@ -504,7 +519,10 @@ kable(model_metrics %>% select(r.squared, adj.r.squared, statistic, p.value, df.
       caption = "Model Fit Metrics")
 ```
 
-**The model explains 75% of the variance (R² = 0.75).** This is a reasonably strong fit. For every 1,000 lbs of weight, we lose about 5.3 MPG (95% CI: [-6.5, -4.1]).
+**The model explains 75% of the variance
+(R² = 0.75).** This is a reasonably strong fit. For
+every 1,000 lbs of weight, fuel efficiency decreases
+by about 5.3 MPG (95% CI: [-6.5, -4.1]).
 
 ```{r}
 #| label: model-visualization
@@ -523,7 +541,8 @@ This helps readers see the real-world value of your analysis.
 Include concrete examples with actual numbers.
 -->
 
-Let me make some predictions to see how this works in practice:
+We make predictions to illustrate the model in
+practice:
 
 ```{r}
 #| label: predictions
@@ -538,7 +557,8 @@ cbind(new_data, predictions) %>%
         caption = "Predicted MPG for Vehicles of Different Weights")
 ```
 
-So a 2,000 lb car gets ~30 MPG, while a 4,000 lb car only gets ~15 MPG. That's quite a difference!
+A 2,000 lb car yields approximately 30 MPG, while a
+4,000 lb car yields only approximately 15 MPG.
 
 # Checking Our Work
 
@@ -551,7 +571,8 @@ Load pre-generated diagnostic data from model fitting script.
 Display residual plots and outlier analysis.
 -->
 
-Before we trust these results, let's check if our model assumptions hold up:
+Before trusting these results, we check model
+assumptions:
 
 ```{r}
 #| label: load-diagnostics
@@ -566,7 +587,10 @@ cat("Outliers found (>2.5 SD):", outlier_count, "\n")
 cat("Residual SE:", round(sqrt(mean(diagnostics$residuals^2)), 2), "MPG\n")
 ```
 
-**Diagnostic checks:** Found 2-3 potential outliers (>2.5 SD) when running the analysis. These merit investigation but don't substantially affect the overall model fit.
+**Diagnostic checks:** Two to three potential
+outliers (>2.5 SD) were found. These merit
+investigation but do not substantially affect the
+overall model fit.
 
 Now let's visualize the residuals to check for patterns:
 
@@ -577,7 +601,9 @@ Now let's visualize the residuals to check for patterns:
 knitr::include_graphics("figures/diagnostics-plot.png")
 ```
 
-Looks pretty good! No major patterns in the residuals, though we have a couple of potential outliers worth investigating.
+No major patterns appear in the residuals, though
+a couple of potential outliers warrant
+investigation.
 
 ## Things to Watch Out For
 
@@ -590,15 +616,22 @@ Help readers avoid your mistakes.
 Use first person: "I found that..." "Watch out for..."
 -->
 
-A few gotchas I encountered while working on this:
+A few gotchas encountered while working on this:
 
-1. **Don't extrapolate too far** - This model works for weights between 1.5-5.5 thousand lbs. Predicting outside that range? Risky!
+1. **Do not extrapolate too far** - This model is
+   valid for weights between 1.5-5.5 thousand lbs.
+   Predicting outside that range is unreliable.
 
-2. **Correlation ≠ Causation** - Weight correlates with MPG, but there are confounding variables (engine size, aerodynamics, etc.)
+2. **Correlation is not causation** - Weight
+   correlates with MPG, but there are confounding
+   variables (engine size, aerodynamics, etc.).
 
-3. **Check your assumptions** - Always plot residuals! A good R² doesn't guarantee your model is appropriate.
+3. **Check model assumptions** - Always plot
+   residuals. A high R² does not guarantee the
+   model is appropriate.
 
-4. **Small sample size** - We only have 32 cars. Take the confidence intervals seriously!
+4. **Small sample size** - With only 32 cars,
+   confidence intervals deserve careful attention.
 
 <!-- ============================================================================
 AMBIANCE IMAGE 3 (OPTIONAL)
@@ -632,7 +665,7 @@ THREE CATEGORIES:
 
 ## Lessons Learnt
 
-Here's what I took away from this exploration:
+The main takeaways from this exploration:
 
 **Conceptual Understanding:**
 - Vehicle weight is a strong predictor of fuel efficiency (R² = 0.75)
@@ -663,7 +696,7 @@ Keep it concise - bullet points work well.
 This shows scientific maturity and helps readers know when your findings apply.
 -->
 
-This analysis has several limitations to keep in mind:
+This analysis has several limitations:
 
 - **Old data**: mtcars is from 1974 - modern vehicles (hybrids, EVs) behave differently
 - **Small sample**: Only 32 observations limits statistical power
@@ -684,7 +717,8 @@ Forward-looking section on what could be done next.
 This helps readers see where research/learning could go next.
 -->
 
-If I had more time, here's what I'd explore next:
+If additional time were available, the following
+would be worth exploring:
 
 1. **Multiple regression** - Add cylinder count, horsepower, transmission type
 2. **Interaction effects** - Does weight impact differ by number of cylinders?
@@ -706,23 +740,22 @@ Keep it brief - 2-3 paragraphs max.
 End with a warm, brief closing line.
 -->
 
-So that's my journey exploring [topic]! We saw that vehicle weight is a powerful predictor of fuel efficiency, accounting for 75% of the variance. The model is simple but effective, though it has limitations worth keeping in mind.
+This exploration confirms that vehicle weight is a
+powerful predictor of fuel efficiency, accounting
+for 75% of the variance. The model is simple but
+effective, though the limitations noted above apply.
 
-**Main takeaways:**
-- Weight strongly predicts MPG (R² = 0.75, β = -5.3)
-- Always check model assumptions with diagnostic plots
-- Confidence intervals matter, especially with small samples
-- Simple models can be surprisingly powerful
+Working through this analysis clarified [specific
+technical skill you gained]. Additional extensions
+(more predictors, non-linear models, modern data)
+would all be instructive next steps.
 
-I learned a lot working through this, especially about [specific technical skill you gained]. There's definitely room for improvement—adding more predictors, trying non-linear models, and using modern data would all be interesting extensions.
-
-**If you're trying this yourself:**
-- Start with exploration before modeling
-- Plot your residuals!
-- Don't trust high R² blindly
-- Report confidence intervals alongside point estimates
-
-Thanks for following along.
+**For those attempting this themselves:**
+- Begin with exploration before modelling.
+- Plot residuals before trusting the fit.
+- High R² alone does not validate a model.
+- Report confidence intervals alongside point
+  estimates.
 
 # See Also
 
@@ -807,19 +840,20 @@ Uses friendly, welcoming tone.
 This shows you're human, approachable, and open to feedback.
 -->
 
-*Have questions, suggestions, or spot an error? Let me know!*
+*Questions, suggestions, or spotted errors are
+welcome.*
 
 - **Twitter/X**: [@rgt47](https://twitter.com/rgt47)
 - **Mastodon**: [@your_mastodon](https://mastodon.social/@username)
 - **GitHub**: [rgt47](https://github.com/rgt47)
 - **Email**: [Contact form](https://rgtlab.org/contact)
 
-**Please reach out** if you:
-- Spot errors or have corrections
-- Have suggestions for improvement
-- Want to discuss the approach
-- Have questions about implementation
-- Just want to connect!
+Please reach out for any of the following:
+- Errors or corrections spotted
+- Suggestions for improvement
+- Discussion of the approach
+- Questions about implementation
+- A simple hello
 
 ---
 
