@@ -4,7 +4,7 @@ author: "Ronald 'Ryy' G. Thomas"
 date: "2025-01-01"
 categories: [r, zzcollab, reproducibility]
 description: "I didn't really know much about [topic] until I tried to [implement/understand] it myself. Here's what I learned along the way."
-image: "media/images/penguin-hero.jpg"
+image: "media/images/penguin-hero.png"
 document-type: "blog"
 draft: true
 execute:
@@ -140,7 +140,7 @@ post and appears in blog listings. It should be:
 - Professional and accessible
 - Properly attributed if from external source
 
-Current: penguin-hero.jpg (penguin theme - replace with your topic!)
+Current: penguin-hero.png (penguin theme - replace with your topic!)
 
 Options for sourcing:
 - UNSPLASH: Free high-quality images → put in media/images/, add attribution to media/images/README.md
@@ -152,7 +152,7 @@ PLACEMENT: This will be displayed in the blog listing, so make it count!
 ATTRIBUTION: Document the source in analysis/media/images/README.md
 -->
 
-![Engaging hero image that introduces your topic visually](media/images/penguin-hero.jpg){.img-fluid width=80%}
+![Engaging hero image that introduces your topic visually](media/images/penguin-hero.png){.img-fluid width=80%}
 
 *Photo caption with attribution if needed. This image sets the visual tone for your entire post.*
 
@@ -252,7 +252,7 @@ EXAMPLES:
 - Topic-related artwork
 ============================================================================ -->
 
-![Atmospheric image to maintain visual engagement - replace with relevant scene](media/images/penguin-hero.jpg){.img-fluid}
+![Atmospheric image to maintain visual engagement - replace with relevant scene](media/images/penguin-hero.png){.img-fluid}
 
 <!-- ============================================================================
 PREREQUISITES AND SETUP SECTION
@@ -431,7 +431,7 @@ SIZING: width: 100%, height: auto
 PURPOSE: Mental break, maintain engagement, visual balance
 ============================================================================ -->
 
-![Visual break - another atmospheric image maintaining engagement](media/images/penguin-hero.jpg){.img-fluid}
+![Visual break - another atmospheric image maintaining engagement](media/images/penguin-hero.png){.img-fluid}
 
 ## Looking for Relationships
 
@@ -644,7 +644,7 @@ Place before "Lessons Learned" section.
 This creates visual bookends around the main analysis.
 ============================================================================ -->
 
-![Concluding visual - tie back to topic theme](media/images/penguin-hero.jpg){.img-fluid}
+![Concluding visual - tie back to topic theme](media/images/penguin-hero.png){.img-fluid}
 
 # What Did We Learn?
 
