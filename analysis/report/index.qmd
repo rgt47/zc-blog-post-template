@@ -34,7 +34,7 @@ YAML FRONT MATTER (lines 1-20)
   [ ] categories      — 3-5 lowercase tags, hyphenated (e.g., `regression`)
   [ ] description     — 1-2 sentences, used in blog listing card
   [ ] image           — path to hero image (relative to this .qmd)
-  [ ] draft: false    — flip when ready
+  [ ] draft: true    — flip when ready
 
 NARRATIVE INPUTS
   [ ] Hook sentence   — "I didn't know X until Y"
@@ -860,7 +860,7 @@ Please reach out for any of the following:
 ---
 
 <!-- ============================================================================
-PRE-PUBLISH QA CHECKLIST — verify each item BEFORE setting draft: false
+PRE-PUBLISH QA CHECKLIST — verify each item BEFORE setting draft: true
 
 This is the verification pass that mirrors the "AUTHOR PROVIDES" list at the
 top of this file. If anything below is unchecked, the post is not ready.
@@ -868,7 +868,7 @@ top of this file. If anything below is unchecked, the post is not ready.
 [ ] YAML
     [ ] title, subtitle, date, categories, description, image filled in
     [ ] document-type: "blog"
-    [ ] draft: false
+    [ ] draft: true
 
 [ ] Narrative complete (no remaining `[bracketed]` placeholders)
     [ ] grep '\[' index.qmd returns only legitimate code/links
