@@ -1,6 +1,6 @@
 ---
 title: "Constructing a reproducible blog post using zzcollab tools"
-author: "Ronald 'Ryy' G. Thomas"
+author: "Ronald G. Thomas"
 date: "2025-01-01"
 categories: [r, zzcollab-compendia, reproducibility]
 description: "I didn't really know much about [topic] until I tried to [implement/understand] it myself. Here's what I learned along the way."
