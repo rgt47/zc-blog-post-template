@@ -3,7 +3,7 @@ title: "Constructing a reproducible blog post using zzcollab tools"
 author: "Ronald G. Thomas"
 date: "2025-01-01"
 categories: [r, zzcollab-compendia, reproducibility]
-description: "I didn't really know much about [topic] until I tried to [implement/understand] it myself. Here's what I learned along the way."
+description: "The scaffold used for every blog post in this series, with the authoring instructions left in place. Copy it to start a new post; the bracketed placeholders in the body mark what the author supplies."
 image: "media/images/penguin-hero.png"
 document-type: "blog"
 draft: false
