@@ -32,7 +32,7 @@ YAML FRONT MATTER (lines 1-20)
   [ ] draft: false    — flip when ready
 
 NARRATIVE INPUTS
-  [ ] Hook sentence   — "I didn't know X until Y"
+  [ ] Hook sentence   — the substantive finding, stated directly
   [ ] Initial misconception you held
   [ ] What you actually discovered
   [ ] Problem context — why you needed this (1 paragraph)
@@ -160,22 +160,23 @@ INTRODUCTION SECTION
 
 <!-- TEMPLATE INSTRUCTION: INTRODUCTION - Ken Koon Wong Style
 
-Purpose: Hook with personal learning narrative
-Ken's approach:
-- "I didn't really know... until I learned"
-- Establishes author as learner, not expert
-- Creates immediate relatability
+Purpose: Open with the substantive finding, then the context
+Approach:
+- Lead with what is true, not with what the author did not know
+- Never open with a personal-revelation hook ('I never knew how...',
+  'I had no idea that...', 'It turns out that...')
+- Establishes author as learner through the narrative, not the opener
 - Conversational, humble tone
 
 Keep it SHORT - 2-3 paragraphs max. Save detailed explanations for later.
 
 EXAMPLE STRUCTURE:
-Paragraph 1: Your "I didn't know until..." hook
+Paragraph 1: The substantive finding, stated directly
 Paragraph 2: Brief context (the problem you faced)
 Paragraph 3: Transition to what you wanted to accomplish
 -->
 
-I didn't really know much about [topic] until I [encountered situation/tried to implement it/needed it for project]. Like many data scientists, I thought [initial misconception or assumption]. Turns out, [what you actually discovered].
+[Topic] is [the substantive finding], which became clear when I [encountered situation/tried to implement it/needed it for project]. Like many data scientists, I thought [initial misconception or assumption]. In fact, [what you actually discovered].
 
 [Brief context: Why did you need this? What problem were you trying to solve? Keep it personal and specific.]
 
